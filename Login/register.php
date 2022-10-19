@@ -121,6 +121,19 @@ getLinks();
 <button type="submit" name="submit" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
 
 <?php
+if (empty($_POST['first_name'])||
+empty($_POST['email'])||
+empty($_POST['user_password'])||
+empty($_POST['confirm_password'])||
+empty($_POST['country'])||
+empty($_POST['city'])||
+empty($_POST['contact_no'])) {
+	die('Please fill all fields!'); }
+	if($_POST['user_password'] != $_POST['confirm_password']) {
+		die('Password does not match!');
+	}
+else{
+
 if(isset($_POST['submit'])){
 	$name = $_POST['first_name'];
 	$email = $_POST['email'];
@@ -136,6 +149,9 @@ if(isset($_POST['submit'])){
 	echo "<script>alert('Sign up Successful')</script>";
     echo "<script>window.open('../index.php','_self')</script>";
 }
+}
+
+
 ?>
 
 </div>
