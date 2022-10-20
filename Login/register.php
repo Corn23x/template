@@ -18,9 +18,9 @@ getLinks();
 <body>
 
 <div class="container">
-	<form action="" method="post">
+	<!-- <form action="" method="post"> -->
 
-<form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<form class="well form-horizontal" action="./registerprocess.php" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -106,6 +106,8 @@ getLinks();
 <div class="input-group">
 	<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
 <input name="contact_no" placeholder="(639)" class="form-control" type="text">
+
+
 </div>
 </div>
 </div>
@@ -120,39 +122,7 @@ getLinks();
 <div class="col-md-4"><br>
 <button type="submit" name="submit" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
 
-<?php
-if (empty($_POST['first_name'])||
-empty($_POST['email'])||
-empty($_POST['user_password'])||
-empty($_POST['confirm_password'])||
-empty($_POST['country'])||
-empty($_POST['city'])||
-empty($_POST['contact_no'])) {
-	die('Please fill all fields!'); }
-	if($_POST['user_password'] != $_POST['confirm_password']) {
-		die('Password does not match!');
-	}
-else{
 
-if(isset($_POST['submit'])){
-	$name = $_POST['first_name'];
-	$email = $_POST['email'];
-	$user_password = $_POST['user_password'];
-	$country = $_POST['country'];
-	$city = $_POST['city'];
-	$contact_no = $_POST['contact_no'];
-
-	insertCustomer_ctr();
-	$customer = new customerClass();
-	$customer->submitRec();
-
-	echo "<script>alert('Sign up Successful')</script>";
-    echo "<script>window.open('../index.php','_self')</script>";
-}
-}
-
-
-?>
 
 </div>
 </div>
@@ -162,7 +132,7 @@ if(isset($_POST['submit'])){
 </div>
 </div>
 <!-- /.container -->
-</form>
+<!-- </form> -->
 </body>
 </html>
 
