@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../controllers/customer_controller.php");
 
 
