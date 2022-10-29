@@ -18,6 +18,7 @@ getLinks();
 <legend><center><h2><b>Login Form</b></h2></center></legend><br><br><br><br>
 
 <form class="Absolute-Center is-Responsive" action="./loginprocess.php" method="POST">
+  
 <div class="container bg-dark form-control">
     <div class="row">
     <div class="Absolute-Center is-Responsive">
@@ -33,14 +34,22 @@ getLinks();
     <label for="exampleInputPassword1" class="form-label text-light">Password</label>
     <input type="password" name="pass" class="form-control text-dark" id="exampleInputPassword1">
   </div>
+
+
   
   <button type="submit" name="enter" class="btn btn-primary">Submit</button>
+    
 </form>
 </div>
 </div>
 </div>
 </div>
 </body>
+
+<?php
+
+
+?>
 
 </html>
 

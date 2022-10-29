@@ -7,9 +7,9 @@ class customerClass extends db_connection{
 
     function submitRec(){
     // insert query
-       $sql = "INSERT INTO `customer` (customer_name, customer_email, customer_pass, customer_country, customer_city, customer_contact)
+       $sql = "INSERT INTO `customer` (customer_name, customer_email, customer_pass, customer_country, customer_city, customer_contact,user_role)
            VALUES
-         ('".$_POST['first_name']."', '".$_POST['email']."', '".$_POST['user_password']."', '".$_POST['country']."', '".$_POST['city']."', '".$_POST['contact_no']."')";
+         ('".$_POST['first_name']."', '".$_POST['email']."', '".$_POST['user_password']."', '".$_POST['country']."', '".$_POST['city']."', '".$_POST['contact_no']."','1')";
         // execute query
         
         return $this->db_query($sql);
@@ -20,11 +20,16 @@ class customerClass extends db_connection{
     function login(){
         $email = $_POST['e_mail'];
         $password = $_POST['pass'];
+        // $user_role= $_POST['user_role'];
 
 
         $sql = "SELECT * FROM `customer` WHERE customer_email = '".$email."' AND customer_pass = '".$password."'";
+       
 
         return $this->db_fetch_one($sql);
+
+       
+
       
 
       
@@ -37,6 +42,8 @@ function mail_cls(){
 
     return $this->db_fetch_one($sql);
 }
+
+
 
 }
 

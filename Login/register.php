@@ -33,7 +33,7 @@ getLinks();
 <div class="col-md-4 inputGroupContainer">
 <div class="input-group">
 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-<input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+<input  name="first_name" id= "name" placeholder="First Name" class="form-control"  type="text">
 </div>
 </div>
 </div>
@@ -48,7 +48,7 @@ getLinks();
 <div class="col-md-4 inputGroupContainer">
 <div class="input-group">
 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-<input name="email" placeholder="Email" class="form-control"  type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+<input name="email" id= "email" placeholder="Email" class="form-control"  type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
 </div>
 </div>
 </div>
@@ -60,7 +60,7 @@ getLinks();
 <div class="col-md-4 inputGroupContainer">
 <div class="input-group">
 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-<input name="user_password" placeholder="Password" class="form-control"  type="password">
+<input name="user_password" id= "user_password" placeholder="Password" class="form-control"  type="password">
 </div>
 </div>
 </div>
@@ -83,7 +83,7 @@ getLinks();
 <div class="col-md-4 inputGroupContainer">
 <div class="input-group">
 	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-<input name="country" placeholder="Enter country" class="form-control"  type="text">
+<input name="country" id= "country" placeholder="Enter country" class="form-control"  type="text">
 </div>
 </div>
 </div>
@@ -93,7 +93,7 @@ getLinks();
 <div class="col-md-4 inputGroupContainer">
 <div class="input-group">
 	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-<input name="city" placeholder="Enter city" class="form-control"  type="text">
+<input name="city" id= "city" placeholder="Enter city" class="form-control"  type="text">
 </div>
 </div>
 </div>
@@ -105,7 +105,8 @@ getLinks();
 <div class="col-md-4 inputGroupContainer">
 <div class="input-group">
 	<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-<input name="contact_no" placeholder="(639)" class="form-control" type="text">
+<input name="contact_no" id= "contact" placeholder="(639)" class="form-control" type="text">
+
 
 
 </div>
@@ -133,6 +134,24 @@ getLinks();
 </div>
 <!-- /.container -->
 <!-- </form> -->
+
+<!-- <script>
+        url:$
+        type:
+        data;{
+            name=documet.getElementById('name').value;
+            email= documet.getElementById('email').value;
+            password = documet.getElementById('user_password').value;
+            email= document.getElementById('email').value;
+            country = document.getElementById('country').value;
+            city = document.getElementById('city').value;
+            contact = document.getElementById('contact').value;
+
+        }
+     
+    
+    </script> -->
+
 </body>
 </html>
 

@@ -3,6 +3,7 @@
 session_start();
 
 
+
 	// landing/index page
 	// URL : https://myproject--1.herokuapp.com/Login/register.php
 
@@ -57,6 +58,11 @@ getLinks();
   </div>
   </div>
 </div>
+
+<?php
+// require "Login/login_check.php";
+
+?>
 </body>
 </html>
 

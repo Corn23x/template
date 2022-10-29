@@ -13,4 +13,11 @@ function validateForm(){
       return false;
    }
 
+   if(document.getElementById('email').value === ""){
+      alert("Success");
+      return false;
+   }
+
+   // 
+
 }

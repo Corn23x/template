@@ -21,6 +21,12 @@ if(isset($_POST['submit'])){
 	$country = $_POST['country'];
 	$city = $_POST['city'];
 	$contact_no = $_POST['contact_no'];
+	// $role = 1;
+
+	$passwd= password_hash($user_password, PASSWORD_DEFAULT);
+
+	
+
 
 	insertCustomer_ctr();
 	$customer = new customerClass();
