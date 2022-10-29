@@ -27,14 +27,10 @@ if(isset($_POST['submit'])){
 	$contact_no = $_POST['contact_no'];
 	// $role = 1;
 
-	
-
-	
-
 
 	insertCustomer_ctr();
-	$customer = new customerClass();
-	$customer->submitRec();
+	// $customer = new customerClass();
+	// $customer->submitRec();
 
 	echo "<script>alert('Sign up Successful')</script>";
     echo "<script>window.open('../index.php','_self')</script>";
