@@ -17,7 +17,7 @@ getLinks();
 <body>
 <legend><center><h2><b>Login Form</b></h2></center></legend><br><br><br><br>
 
-<form class="Absolute-Center is-Responsive" action="./loginprocess.php" method="POST">
+<form class="Absolute-Center is-Responsive" action="loginprocess.php" method="POST">
   
 <div class="container bg-dark form-control">
     <div class="row">
@@ -37,7 +37,7 @@ getLinks();
 
 
   
-  <button type="submit" name="enter" class="btn btn-primary">Submit</button>
+  <input type="submit" name="enter" value="Submit" class="btn btn-primary"></input>
     
 </form>
 </div>
@@ -46,10 +46,6 @@ getLinks();
 </div>
 </body>
 
-<?php
-
-
-?>
 
 </html>
 
