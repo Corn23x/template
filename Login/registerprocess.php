@@ -15,7 +15,7 @@ empty($_POST['contact_no'])) {
 		die('Password does not match!');
 	}
 else{
-	// The variable used for password is what must be used for the hash
+	// The variable used for password in class is what must be used for the hash
 
 if(isset($_POST['submit'])){
 	$name = $_POST['first_name'];

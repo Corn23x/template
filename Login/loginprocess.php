@@ -25,11 +25,12 @@ if(isset($_POST['enter'])){
         if($result){
             $_SESSION['id'] = $result['customer_id'];
             $_SESSION['role'] = $result['user_role'];
-            header('Location: ../landing_page.php');
+           
 
-          
-            echo "<script>alert('Login Successful')</script>";
-            echo "<script>window.open('../index.php','_self')</script>";
+         echo "<script>alert('Login Successful')</script>";
+            echo "<script>window.open('../landing_page.php','_self')</script>";
+
+            // header('Location: ../landing_page.php');
     }else{
         echo "<script>alert('Login Failed')</script>";
         echo "<script>window.open('login.php','_self')</script>";

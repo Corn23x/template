@@ -20,14 +20,18 @@ class customerClass extends db_connection{
     function login(){
         $email = $_POST['e_mail'];
         $password = $_POST['pass'];
+        $sql = "SELECT * FROM `customer` WHERE customer_email = '".$email."'";
+        $one= $this->db_fetch_one($sql);
+ 
+        if(password_verify($password,$one['customer_pass'] )){
+            return $one;
+        }else{
+            return false;
+        }
         // $user_role= $_POST['user_role'];
 
 
-        $sql = "SELECT * FROM `customer` WHERE customer_email = '".$email."' AND customer_pass = '".$password."'";
        
-
-        return $this->db_fetch_one($sql);
-
        
 
       
