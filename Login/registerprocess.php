@@ -1,5 +1,6 @@
 <?php
 include("../controllers/customer_controller.php");
+session_start();
 
 if (empty($_POST['first_name'])||
 empty($_POST['email'])||
