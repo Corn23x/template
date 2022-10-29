@@ -3,28 +3,9 @@ include('../controllers/product_controller.php');
 session_start();
 if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
     if($_SESSION['role']== 2){
-
-
-// if (isset($_GET['submit'])) {
-//     header("Location: actions/add_brand.php");
-//     $default = $_GET['brand'];
-//     //make view aware of controller
-    
-//     //run controller responsible for insert
-//     $insert = brand_add($default);
-
-//     if ($insert) {
-//     echo 'insert successful';
-//     header('location:../admin/brand.php');
-//     } 
-//     else {
-//     echo 'insert failed'; 
-//     } 
- //}
-
-
-
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,16 +13,16 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brands</title>
+    <title>Category</title>
 </head>
 <body>
 <div id="content" class="p-4 p-md-5 pt-5">
-        <h2 class="mb-4" style="color:black; text-align:left; font-size:40px">BRANDS</h2>
-        <p>Welcome to the brands section</p>
+        <h2 class="mb-4" style="color:black; text-align:left; font-size:40px">Category</h2>
+        <p>Welcome to the category section</p>
         <p></p>
-        <form action="../actions/add_brand.php" method="GET">
-            <label for="brand">Add a brand:</label>
-            <input name= 'brand' required></input>
+        <form action="../actions/add_category.php" method="GET">
+            <label for="category">Add a category:</label>
+            <input name= 'category' required></input>
             <input type= 'submit' name='submit' value='Add'></input>
            <button><a href='admin.php'>Back</a></button> 
         </form>
@@ -65,22 +46,22 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
             </Thead>
             <Tbody>
             <?php
-                $all_brands = brand_select();
-                foreach($all_brands as $all)
+                $all_cat = cat_select();
+                foreach($all_cat as $all)
                     {
             ?>
                      <tr>
                          <td>
-                            <?= $all['brand_id'] ?>
+                            <?= $all['cat_id'] ?>
                         </td>
                         <td>
-                            <?= $all['brand_name'] ?>
+                            <?= $all['cat_name'] ?>
                         </td>
                         <td>
-                            <a href=<?="../actions/updatebrand.php?id=".$all['brand_id'] ?>>Edit</a>
+                            <a href=<?="../actions/updatecategory.php?id=".$all['cat_id'] ?>>Edit</a>
                         </td>
                         <td>
-                            <a href=<?="../actions/deletebrand.php?id=".$all['brand_id'] ?>>Delete</a>
+                            <a href=<?="../actions/deletebrand.php?id=".$all['cat_id'] ?>>Delete</a>
                         </td>  
                     </tr>
             <?php
@@ -101,14 +82,13 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
 </body>
 </html>
 
-<?php
 
+
+<?php
 }
 else{
     header('Location: ../landing_page.php');
   }
 }
   
-
-
 ?>

@@ -9,21 +9,24 @@ empty($_POST['country'])||
 empty($_POST['city'])||
 empty($_POST['contact_no'])) {
 	die('Please fill all fields!'); }
+
 	if($_POST['user_password'] != $_POST['confirm_password']) {
 		die('Password does not match!');
 	}
 else{
+	// The variable used for password is what must be used for the hash
 
 if(isset($_POST['submit'])){
 	$name = $_POST['first_name'];
 	$email = $_POST['email'];
 	$user_password = $_POST['user_password'];
+	$_POST['user_password'] = password_hash($user_password, PASSWORD_DEFAULT);
 	$country = $_POST['country'];
 	$city = $_POST['city'];
 	$contact_no = $_POST['contact_no'];
 	// $role = 1;
 
-	$passwd= password_hash($user_password, PASSWORD_DEFAULT);
+	
 
 	
 

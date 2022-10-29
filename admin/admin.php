@@ -32,7 +32,7 @@
               <a href="brand.php"><span class="fa fa-support mr-3"></span> Brands</a>
           </li>
           <li>
-            <a href="categories.php"><span class="fa fa-support mr-3"></span> Categories</a>
+            <a href="category.php"><span class="fa fa-support mr-3"></span> Categories</a>
           </li>
           <li>
             <a href="customers.php"><span class="fa fa-support mr-3"></span> Customer Info</a>
