@@ -1,6 +1,6 @@
 <?php
     //database credentials
-    include('../settings/db_class.php');
+    include('F:/XAMPP/htdocs/template/settings/db_class.php');
 
     class Brand_class extends db_connection {
 
@@ -46,6 +46,8 @@
         }
 
     }
+
+    
 
     // Category Class
 
@@ -98,5 +100,54 @@
 
 
 
+
+    // Product Class
+    class Product_class extends db_connection{
+
+        //Insert method
+        public function insert_product($productcat, $productbrand, $product_title, $productprice, $productdesc, $productimage,$product_keywords) {
+
+            //formulate insert query
+            $sql = "INSERT INTO products(product_cat, product_brand, product_title, product_price, product_desc, product_image, product_keywords) VALUES('$productcat', '$productbrand','$product_title', '$productprice', '$productdesc', '$productimage', '$product_keywords')";
+
+            //execute query
+            return $this->db_query($sql);
+        }
+
+        //Select method
+        public function select_product()  {
+
+            //formulate select query
+            $sql = "SELECT * FROM products";
+            //$result = $this->db_fetch($sql);
+
+            //execute query
+            return $this->db_fetch_all($sql);;
+        }
+
+        //Delete model
+        public function delete_product($productid) {
+
+            //formulate delete query
+            $sql = "DELETE FROM products WHERE product_id='$productid'";
+
+            //execute query
+            return $this->db_query($sql);
+        }
+
+        //Update model
+        public function update_product($productcat, $productbrand, $productprice, $product_title, $productkeywords, $productdesc, $productimage, $productid) {
+
+            //formulate update query
+            $sql = "UPDATE products SET  product_cat = '$productcat', product_brand = '$productbrand', product_price = '$productprice', product_title='$product_title', product_keywords='$productkeywords' ,product_desc = '$productdesc', product_image = '$productimage' WHERE product_id = '$productid'";
+
+            //execute query
+            return $this->db_query($sql);
+        }
+
+
+    }
+
+// End Product Class
     
 ?>

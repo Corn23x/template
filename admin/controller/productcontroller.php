@@ -17,7 +17,7 @@
         }
     }
 
-    function select_product() {
+    function select_product($sql) {
         //model class instance
         $productview = new Product_class();
 
@@ -27,7 +27,7 @@
         if ($run_product) {
             $view_all = array();
             //loop through fetch array
-            while ($oneproduct=$productview->db_fetch()) {
+            while ($oneproduct=$productview->db_fetch_one($sql)) {
                 //append record to array
                 $view_all[]=$oneproduct;
             }
@@ -68,7 +68,7 @@
         }
     }
 
-    function cat_select() {
+    function cat_select($sql) {
         //model class instance
         $catview = new Product_class();
 
@@ -78,7 +78,7 @@
         if ($run_cat) {
             $view_all = array();
             //loop through fetch array
-            while ($onecat=$catview->db_fetch()) {
+            while ($onecat=$catview->db_fetch_one($sql)) {
                 //append record to array
                 $view_all[]=$onecat;
             }
@@ -89,7 +89,7 @@
         }
     }
 
-    function brand_select() {
+    function brand_select($sql) {
         //model class instance
         $brandview = new Product_class();
 
@@ -99,7 +99,7 @@
         if ($run_brand) {
             $view_all = array();
             //loop through fetch array
-            while ($onebrand=$brandview->db_fetch()) {
+            while ($onebrand=$brandview->db_fetch_one($sql)) {
                 //append record to array
                 $view_all[]=$onebrand;
                 //$view_all[$onebrand['brand_id']] = $onebrand['brand_name'];

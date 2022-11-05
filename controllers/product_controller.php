@@ -1,6 +1,6 @@
 <?php 
     //model
-include("../classes/product_class.php");
+include('F:/XAMPP/htdocs/template/classes/product_class.php');
 
     function brand_add($brand) {
         //model class instance
@@ -115,6 +115,65 @@ include("../classes/product_class.php");
             return false;
         }
     }
+
+    // End of Category function
+
+
+
+
+    // Product controllers
+
+    function prod_insert($productcat, $productbrand, $product_title, $productprice, $productdesc, $productimage,$product_keywords){
+        //model class instance
+        $product = new Product_class();
+
+        //run insert phone model method
+        $run_prod = $product->insert_product($productcat, $productbrand, $product_title, $productprice, $productdesc, $productimage,$product_keywords);
+
+        if ($run_prod) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+    function prod_select() {
+        //model class instance
+        $catview = new Product_class();
+
+        //run select phone model method
+        $run_cat = $catview->select_product();
+        return $run_cat;
+      
+    }
+
+    function prod_del($productid){
+        //model class instance
+        $catview = new Product_class();
+
+        //run select phone model method
+        $run_cat = $catview->delete_product($productid);
+        return $run_cat;
+      
+    }
+
+    function prod_update($productcat, $productbrand, $productprice, $productkeywords, $product_title, $productdesc, $productimage, $productid){
+        //model class instance
+        $catview = new Product_class();
+
+        //run select phone model method
+        $run_cat = $catview->update_product($productcat, $productbrand, $productprice, $productkeywords, $product_title, $productdesc, $productimage, $productid);
+        return $run_cat;
+      
+
+    }
+
+
+// End of Product controllers
+
+
 ?>
 
-<!-- End of Category Function -->
+
