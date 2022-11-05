@@ -13,7 +13,7 @@ $default = $_GET['brand'];
         echo "<script>window.open('../admin/brand.php','_self')</script>";
     } 
     else {
-    echo 'insert failed'; 
+    echo 'insert failed';
     } 
 }
 
