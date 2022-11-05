@@ -19,10 +19,10 @@ include('controllers/product_controller.php');
         crossorigin="anonymous">
 
           <!-- font awesome -->
-          <link href="fontawesome/css/all.css" rel="stylesheet">
+          <!-- <link href="fontawesome/css/all.css" rel="stylesheet">
         <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css" >
         <link rel="stylesheet" href="fontawesome/css/solid.min.css">
-        <link rel="stylesheet" href="fontawesome/css/solid.css">
+        <link rel="stylesheet" href="fontawesome/css/solid.css"> -->
         
 <!-- css file -->
 <link rel="stylesheet" href="../style.css">
