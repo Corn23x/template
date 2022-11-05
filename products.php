@@ -127,7 +127,7 @@ getLinks();
 
 
 <br>
-<button class="btn btn-info"><a href="product_add.php">Add Product</a></button>
+<a class="btn btn-primary" href="product_add.php" role="button">Add product</a>
 <br>
 
 
