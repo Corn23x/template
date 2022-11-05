@@ -123,7 +123,7 @@ getLinks();
             </Tbody>
         </table>
         </div>
-
+<a href="product_add.php">add</a>
 
 
 <br>
