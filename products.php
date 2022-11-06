@@ -1,5 +1,5 @@
 <?php
-include('functions/common_function.php');
+//include('functions/common_function.php');
 include('controllers/product_controller.php');
 ?>
 
@@ -13,7 +13,7 @@ include('controllers/product_controller.php');
 </head>
 
 <?php
-getLinks();
+//getLinks();
 
 ?>
 <body>
