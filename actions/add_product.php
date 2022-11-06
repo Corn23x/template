@@ -36,18 +36,7 @@ or $product_brands=='' or $product_price=='' or  $product_image1==''){
 
 }
 
-//Insert query
 
-
-// $insert_products= "insert into `products` (product_title,product_description,
-// product_keywords,category_id,brand_id,product_img1,product_img2,
-// product_img3,product_price,date,status) values ('$product_title','$description','$product_keywords',
-// '$product_category','$product_brands','$product_image1','$product_image2','$product_image3','$product_price',NOW(),'$product_status')";
-
-// $result_query=mysqli_query($con,$insert_products);
-// if($result_query){
-//   echo "<script> alert('Successfuly inserted the products!') </script>";
-// }
 
 }
 
