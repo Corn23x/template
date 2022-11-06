@@ -77,7 +77,7 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
                             <?= $all['brand_name'] ?>
                         </td>
                         <td>
-                            <a href=<?="../actions/updatebrand.php?id=".$all['brand_id'] ?>>Edit</a>
+                            <a href=<?="brand_update.php?id=".$all['brand_id'] ?>>Edit</a>
                         </td>
                         <td>
                             <a href=<?="../actions/deletebrand.php?id=".$all['brand_id'] ?>>Delete</a>
