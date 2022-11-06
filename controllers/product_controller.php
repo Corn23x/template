@@ -1,6 +1,6 @@
 <?php 
     //model
-include('../classes/product_class.php');
+include('C:/XAMPP/htdocs/template/classes/product_class.php');
 
     function brand_add($brand) {
         //model class instance

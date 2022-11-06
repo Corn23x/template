@@ -9,7 +9,7 @@
 <body>
     <form action="../actions/updatebrand.php" method="post">
     <input name="updatebrand" type="text">
-    <input name="summit" type="submit"> 
+    <input name="summit" type="submit" value="Submit"> 
   <?php echo "<input type='hidden' name='id' value= $_GET[id]> "?>
 
     </form>

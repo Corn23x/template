@@ -13,7 +13,7 @@ include('controllers/product_controller.php');
 </head>
 
 <?php
-getLinks();
+ getLinks();
 
 ?>
 <body>
