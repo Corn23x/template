@@ -1,6 +1,6 @@
 <?php
     //database credentials
-    include('F:/XAMPP/htdocs/template/settings/db_class.php');
+    require('../settings/db_class.php');
 
     class Brand_class extends db_connection {
 
