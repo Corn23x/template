@@ -54,7 +54,7 @@ getLinks();
   </div>
 </nav>
 
-<div class="table-wrapper m-4 table-striped">
+<div class="table-wrapper m-4">
         <table class="table table-striped table-dark">
             <Thead>
                 <tr>
@@ -123,7 +123,7 @@ getLinks();
             </Tbody>
         </table>
         </div>
-<a href="product_add.php">add</a>
+
 
 
 <br>
