@@ -1,7 +1,8 @@
 <?php
     //database credentials
-    include('C:/XAMPP/htdocs/template/settings/db_class.php');
+  //  include('C:/XAMPP/htdocs/template/settings/db_class.php');
 
+    include (dirname(__DIR__,1) . '/settings/db_class.php');
     class Brand_class extends db_connection {
 
         //Insert method

@@ -1,5 +1,5 @@
 <?php
-include('functions/common_function.php');
+require('functions/common_function.php');
 include('controllers/product_controller.php');
 ?>
 
