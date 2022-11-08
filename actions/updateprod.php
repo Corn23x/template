@@ -12,7 +12,7 @@ if (isset($_POST['edit_product'])){
     $product_image1= $_FILES['product_image1']['name'];
     $keywords = $_POST['keywords'];
   
-    $result= prod_update($cat, $brand, $price, $keywords, $title, $desc, $product_image1, $id);
+    $result= prod_update($cat, $brand, $price, $title, $keywords,  $desc, $product_image1, $id);
 
     if ($result){
         echo "<script>alert('Updated successful')</script>";

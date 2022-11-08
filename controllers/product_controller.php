@@ -159,12 +159,12 @@
       
     }
 
-    function prod_update($productcat, $productbrand, $productprice, $productkeywords, $product_title, $productdesc, $productimage, $productid){
+    function prod_update($productcat, $productbrand, $productprice, $product_title, $productkeywords, $productdesc, $productimage, $productid){
         //model class instance
         $catview = new Product_class();
 
         //run select phone model method
-        $run_cat = $catview->update_product($productcat, $productbrand, $productprice, $productkeywords, $product_title, $productdesc, $productimage, $productid);
+        $run_cat = $catview->update_product($productcat, $productbrand, $productprice, $product_title, $productkeywords, $productdesc, $productimage, $productid);
         return $run_cat;
       
 
