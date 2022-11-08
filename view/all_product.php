@@ -42,7 +42,7 @@ getLinks();
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Login/logout.php">Logout</a>
+          <a class="nav-link" href="../Login/logout.php">Logout</a>
         </li>
       </ul>
       <form class="d-flex" role="search" action="product_search_result.php" method="get">
