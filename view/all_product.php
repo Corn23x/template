@@ -1,6 +1,6 @@
 <?php
-include('functions/common_function.php');
-include('controllers/product_controller.php');
+include(dirname(__DIR__,1). '/functions/common_function.php');
+include(dirname(__DIR__,1). '/controllers/product_controller.php');
 
 getLinks();
 ?>
@@ -45,9 +45,11 @@ getLinks();
           <a class="nav-link" href="Login/logout.php">Logout</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex" role="search" action="../actions/product_functions.php" method="get">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+      <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+      <input type="submit" value="Search" class="btn btn-outline-dark" name="search_data_product">
+      
       </form>
     </div>
   </div>
@@ -63,12 +65,12 @@ if(!isset($_GET['brand'])){
             {
          echo '<div class="col-md-4 mb-3">
          <div class="card form-control mb-3 absolute" style="width: 18rem;">
-                <img src="images/'.$all['product_image'].'" class="card-img-top" alt="...">
+                <img src="../images/'.$all['product_image'].'" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">'.$all['product_title'].'</h5>
                     <p class="card-text">'.$all['product_desc'].'</p>
                     <p class="card-text">Price: '.$all['product_price'].'</p>
-                    <a href="single_product.php?product_id='.$all['product_id'].'" class="btn btn-primary">View</a>
+                    <a href="single_product.php?product_id='.$all['product_id'].'" class="btn btn-primary" name="viewmore">View</a>
                     <a href="single_product.php?add_to_cart='.$all['product_id'].'" class="btn btn-primary">Add to cart</a>
                     
                 </div>

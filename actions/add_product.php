@@ -1,4 +1,6 @@
 <?php
+// Add product processes
+
 include('../controllers/product_controller.php');
 
 if(isset($_POST['insert_product'])){
@@ -32,7 +34,7 @@ or $product_brands=='' or $product_price=='' or  $product_image1==''){
 
   
   echo "<script>alert('Product added successful')</script>";
- echo "<script>window.open('../products.php','_self')</script>";
+ echo "<script>window.open('../view/products.php','_self')</script>";
 
 }
 

@@ -1,6 +1,8 @@
 <?php
 session_start();
-include('functions/common_function.php');
+
+include(dirname(__DIR__,1). '/functions/common_function.php');
+
 if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
     if($_SESSION['role']== 1){
 ?>
@@ -41,7 +43,7 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
           </ul>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="Login/logout.php">Logout</a>
+        <a class="nav-link" href="../Login/logout.php">Logout</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -60,7 +62,7 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
         <h2>Home Page</h2>
 
     </div>
-    <a href="./Login/logout.php">Logout</a>
+    <a href="../Login/logout.php">Logout</a>
 
     
 </body>

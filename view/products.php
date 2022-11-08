@@ -1,6 +1,6 @@
 <?php
-require('functions/common_function.php');
-include('controllers/product_controller.php');
+require(dirname(__DIR__,1). '/functions/common_function.php');
+include(dirname(__DIR__,1). '/controllers/product_controller.php');
 ?>
 
 <!DOCTYPE html>
@@ -46,9 +46,9 @@ getLinks();
           <a class="nav-link" href="Login/logout.php">Logout</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex" role="search" action="product_search_result.php" method="get">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+        <input type="submit" value="Search" class="btn btn-outline-dark" name="search_data_product">
       </form>
     </div>
   </div>

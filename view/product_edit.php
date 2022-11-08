@@ -1,5 +1,5 @@
 <?php
-include('controllers/product_controller.php');
+include(dirname(__DIR__,1). '/controllers/product_controller.php');
 
 
 ?>
@@ -19,10 +19,10 @@ include('controllers/product_controller.php');
         crossorigin="anonymous">
 
           <!-- font awesome -->
-          <!-- <link href="fontawesome/css/all.css" rel="stylesheet">
-        <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css" >
-        <link rel="stylesheet" href="fontawesome/css/solid.min.css">
-        <link rel="stylesheet" href="fontawesome/css/solid.css"> -->
+          <link href="../fontawesome/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="../fontawesome/css/fontawesome.min.css" >
+        <link rel="stylesheet" href="../fontawesome/css/solid.min.css">
+        <link rel="stylesheet" href="../fontawesome/css/solid.css">
         
 <!-- css file -->
 <link rel="stylesheet" href="../style.css">
@@ -30,11 +30,12 @@ include('controllers/product_controller.php');
 </head>
 <body class="bg-light">
   <div class="container mt-3">
-    <h1 class="text-center">Insert Products</h1>
+    <h1 class="text-center">Edit Products</h1>
 
     <!-- Form (Anything aside text in the form would require the 'enctype') -->
-    <form action="actions/add_product.php" method="post" enctype="multipart/form-data">
+    <form action="../actions/updateprod.php" method="post" enctype="multipart/form-data">
     <!-- Title -->
+    <?php echo "<input type='hidden' name='id' value= $_GET[id] class='form-control'>" ?>
     <div class="form-outline mb-4 w-50 m-auto">
       <label for="product_title" class="form-label">Product Title</label>
       <input type="text" name="product_title" id="product_title" class="form-control" placeholder="Enter Product Title" autocomplete="off" required="required">
@@ -97,7 +98,7 @@ foreach($cat as $all){
     </div>
     <!-- Price -->
     <div class="form-outline mb-7 mt-3 w-50 m-1">
-      <input type="submit" name="insert_product"  class="btn btn-info" value="Insert products">
+      <input type="submit" name="edit_product"  class="btn btn-info" value="Insert products">
 
     </div>
     </form>

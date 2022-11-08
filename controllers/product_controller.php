@@ -170,6 +170,26 @@
 
     }
 
+    function Oneprod($prodcutid){
+        //model class instance
+        $prod = new Product_class();
+
+        //run select phone model method
+        $run = $prod->selectOne($prodcutid);
+        return $run;
+      
+    }
+
+    function search_productctr( $search_query){
+        //model class instance
+        $prod = new Product_class();
+
+        //run select phone model method
+        $run = $prod->search_product( $search_query);
+        return $run;
+      
+    }
+
 
 
 // End of Product controllers

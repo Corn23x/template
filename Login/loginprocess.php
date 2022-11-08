@@ -25,7 +25,7 @@ if(isset($_POST['enter'])){
             $_SESSION['role'] = $result['user_role'];
            
          echo "<script>alert('Login Successful')</script>";
-            echo "<script>window.open('../landing_page.php','_self')</script>";
+            echo "<script>window.open('../view/landing_page.php','_self')</script>";
 
             // header('Location: ../landing_page.php');
     }else{

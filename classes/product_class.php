@@ -3,6 +3,7 @@
   //  include('C:/XAMPP/htdocs/template/settings/db_class.php');
 
     include (dirname(__DIR__,1) . '/settings/db_class.php');
+    
     class Brand_class extends db_connection {
 
         //Insert method
@@ -146,10 +147,22 @@
             return $this->db_query($sql);
         }
 
-        
+
+        public function selectOne($productid){
+            $sql = "SELECT * FROM products WHERE product_id = '$productid'";
+            return $this->db_fetch_one($sql);
+        }
+
+
+        public function search_product( $search_query){
+                $sql = "SELECT * FROM products WHERE product_keywords LIKE '%$search_query%'";
+                return $this->db_fetch_all($sql);
+            }
+        }
     
 
-    }
+    
+
 
 // End Product Class
     
