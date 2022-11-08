@@ -28,7 +28,7 @@ include(dirname(__DIR__,1). '/controllers/product_controller.php');
 <link rel="stylesheet" href="../style.css">
 
 </head>
-<body class="bg-light">
+<body class="bg-dark">
   <div class="container mt-3">
     <h1 class="text-center">Insert Products</h1>
 
