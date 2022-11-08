@@ -58,7 +58,7 @@
         }
     }
 
-
+// End of Brand class
     
     // Category controllers
 
@@ -169,6 +169,7 @@
       
 
     }
+
 
 
 // End of Product controllers

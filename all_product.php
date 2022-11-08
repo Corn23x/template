@@ -1,9 +1,10 @@
 <?php
-session_start();
 include('functions/common_function.php');
-if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
-    if($_SESSION['role']== 1){
+include('controllers/product_controller.php');
+
+getLinks();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,11 +12,11 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User</title>
+    <title>All Products</title>
+</head>
+<body>
 
-<?php getLinks(); ?>
-
-  <nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Lab</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,13 +25,13 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="landing_page.php">Home</a>
+          <a class="nav-link " aria-current="page" href="landing_page.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="products.php">Products</a>
+          <a class="nav-link " href="products.php">Products</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Product Display
           </a>
           <ul class="dropdown-menu">
@@ -41,7 +42,7 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
           </ul>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="Login/logout.php">Logout</a>
+          <a class="nav-link" href="Login/logout.php">Logout</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -52,29 +53,34 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
   </div>
 </nav>
 
+<?php  
+
+if(!isset($_GET['brand'])){
+    if(!isset($_GET['category'])){
     
+        $all_products = prod_select();
+        foreach($all_products as $all)
+            {
+         echo '<div class="col-md-4 mb-3">
+         <div class="card form-control mb-3 absolute" style="width: 18rem;">
+                <img src="images/'.$all['product_image'].'" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">'.$all['product_title'].'</h5>
+                    <p class="card-text">'.$all['product_desc'].'</p>
+                    <p class="card-text">Price: '.$all['product_price'].'</p>
+                    <a href="single_product.php?product_id='.$all['product_id'].'" class="btn btn-primary">View</a>
+                    <a href="single_product.php?add_to_cart='.$all['product_id'].'" class="btn btn-primary">Add to cart</a>
+                    
+                </div>
+    
+         </div>';
+    
+     }
+    }
+    }
 
-</head>
-<body>
-    <div class="header">
-        <h2>Home Page</h2>
-
-    </div>
-    <a href="./Login/logout.php">Logout</a>
+?>
 
     
 </body>
 </html>
-
-<?php
-
-}
-elseif($_SESSION['role']== 2){
-    header('Location: ./admin/admin.php');
-  }
-  else{
-    header('Location: ./Login/login.php');
-  }
-}
-
-?>
