@@ -1,6 +1,6 @@
 <?php 
     //model
-    include (dirname(__DIR__,1) . '/classes/product_class.php');
+    include_once (dirname(__DIR__,1) . '/classes/product_class.php');
 
     function brand_add($brand) {
         //model class instance

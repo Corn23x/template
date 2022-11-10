@@ -1,5 +1,5 @@
 <?php
-session_start();
+include(dirname(__DIR__, 1) . '/settings/core.php');
 
 include("../controllers/customer_controller.php");
 
@@ -22,14 +22,20 @@ if(isset($_POST['enter'])){
 
         if($result){
             $_SESSION['id'] = $result['customer_id'];
-            $_SESSION['role'] = $result['user_role'];
+            $_SESSION['user_role'] = $result['user_role'];
            
+            if($_SESSION['user_role']== 1){
          echo "<script>alert('Login Successful')</script>";
-            echo "<script>window.open('../view/landing_page.php','_self')</script>";
+            echo "<script>window.open('../admin/admin.php','_self')</script>";
 
             // header('Location: ../landing_page.php');
+    }elseif($_SESSION['user_role']== 2){
+
+        echo "<script>alert('Login Successful')</script>";
+        echo "<script>window.open('../view/landing_page.php','_self')</script>";
+    }
+
     }else{
-       
         echo "<script>alert('Login Failed')</script>";
         echo "<script>window.open('login.php','_self')</script>";
     }
@@ -39,6 +45,7 @@ if(isset($_POST['enter'])){
 
     
     }
+
 
 
 

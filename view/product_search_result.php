@@ -32,6 +32,9 @@ if(isset($_GET['search_data_product'])){
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
+            <li class="nav-item">
+            <a class="nav-link " href="cart.php">Cart </a>
+          </li>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../Login/logout.php">Logout</a>
@@ -56,7 +59,7 @@ if(isset($_GET['search_data_product'])){
                    <p class="card-text">'.$results['product_desc'].'</p>
                    <p class="card-text">Price: '.$results['product_price'].'</p>
                    <a href="single_product.php?product_id='.$results['product_id'].'" class="btn btn-primary">View</a>
-                   <a href="single_product.php?add_to_cart='.$results['product_id'].'" class="btn btn-primary">Add to cart</a>
+                   <a href="../actions/add_to_cart.php?add_to_cart='.$results['product_id'].'" class="btn btn-primary">Add to cart</a>
                    
                </div>
    

@@ -1,10 +1,10 @@
 <?php
-session_start();
+include(dirname(__DIR__, 1) . '/settings/core.php');
 
 include(dirname(__DIR__,1). '/functions/common_function.php');
 
-if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
-    if($_SESSION['role']== 1){
+// if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
+//     if($_SESSION['role']== 1){
 ?>
 
 <!DOCTYPE html>
@@ -70,13 +70,13 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
 
 <?php
 
-}
-elseif($_SESSION['role']== 2){
-    header('Location: ./admin/admin.php');
-  }
-  else{
-    header('Location: ./Login/login.php');
-  }
-}
+// }
+// elseif($_SESSION['role']== 2){
+//     header('Location: ../admin/admin.php');
+//   }
+//   else{
+//     header('Location: ../Login/login.php');
+//   }
+// }
 
 ?>

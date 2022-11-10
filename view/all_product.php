@@ -1,6 +1,8 @@
 <?php
-include(dirname(__DIR__,1). '/functions/common_function.php');
-include(dirname(__DIR__,1). '/controllers/product_controller.php');
+include_once(dirname(__DIR__,1). '/functions/common_function.php');
+include_once(dirname(__DIR__,1). '/controllers/product_controller.php');
+include_once(dirname(__DIR__,1). '/controllers/cart_controller.php');
+include_once(dirname(__DIR__,1). '/settings/core.php');
 
 getLinks();
 ?>
@@ -41,6 +43,14 @@ getLinks();
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
+
+       <?php
+       $count= CountCartCtr($_SESSION['id']);
+       echo ' <li class="nav-item">
+       <a class="nav-link" href="cart.php">Cart('.$count.') </a>
+     </li>';
+       ?>
+
         <li class="nav-item">
           <a class="nav-link" href="../Login/logout.php">Logout</a>
         </li>
@@ -71,7 +81,7 @@ if(!isset($_GET['brand'])){
                     <p class="card-text">'.$all['product_desc'].'</p>
                     <p class="card-text">Price: '.$all['product_price'].'</p>
                     <a href="single_product.php?product_id='.$all['product_id'].'" class="btn btn-primary" name="viewmore">View</a>
-                    <a href="single_product.php?add_to_cart='.$all['product_id'].'" class="btn btn-primary">Add to cart</a>
+                    <a href="../actions/add_to_cart.php?add_to_cart='.$all['product_id'].'" class="btn btn-primary">Add to cart</a>
                     
                 </div>
     

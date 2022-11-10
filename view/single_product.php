@@ -26,7 +26,7 @@ $results = Oneprod($product_id);
                     <h4> Description </h4>
                     <p class="">'.$results['product_desc'].'</p>
 
-                    <a href="single_product.php?add_to_cart='.$results['product_id'].'" class="btn btn-primary">Add to cart</a>
+                    <a href="../actions/add_to_cart.php?add_to_cart='.$results['product_id'].'" class="btn btn-primary">Add to cart</a>
 
                 
             </div> 

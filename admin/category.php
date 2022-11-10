@@ -1,8 +1,6 @@
 <?php
 include('../controllers/product_controller.php');
-session_start();
-if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
-    if($_SESSION['role']== 2){
+include(dirname(__DIR__, 1) . '/settings/core.php');
 ?>
 
 
@@ -85,10 +83,5 @@ if(isset($_SESSION["id"]) && isset($_SESSION['role'])){
 
 
 <?php
-}
-else{
-    header('Location: ../landing_page.php');
-  }
-}
-  
+
 ?>
