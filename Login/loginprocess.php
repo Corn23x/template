@@ -24,12 +24,12 @@ if(isset($_POST['enter'])){
             $_SESSION['id'] = $result['customer_id'];
             $_SESSION['user_role'] = $result['user_role'];
            
-            if($_SESSION['user_role']== 1){
+            if($_SESSION['user_role']== 2){
          echo "<script>alert('Login Successful')</script>";
             echo "<script>window.open('../admin/admin.php','_self')</script>";
 
             // header('Location: ../landing_page.php');
-    }elseif($_SESSION['user_role']== 2){
+    }elseif($_SESSION['user_role']== 1){
 
         echo "<script>alert('Login Successful')</script>";
         echo "<script>window.open('../view/landing_page.php','_self')</script>";
