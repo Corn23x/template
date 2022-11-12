@@ -46,9 +46,11 @@ include(dirname(__DIR__,1). '/functions/common_function.php');
         <a class="nav-link" href="../Login/logout.php">Logout</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      
+      <form class="d-flex" role="search" action="product_search_result.php" method="get">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+      <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+      <input type="submit" value="Search" class="btn btn-outline-dark" name="search_data_product">
       </form>
     </div>
   </div>

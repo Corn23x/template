@@ -1,6 +1,8 @@
 <?php
 include_once (dirname(__DIR__,1) . '/settings/db_class.php');
 
+
+
 class Cart_class extends db_connection{
 
     //Insert method
@@ -43,20 +45,22 @@ class Cart_class extends db_connection{
 
 
     //Delete model
-    public function cart_delete($cart_id) {
+    public function cart_delete($productid,$customerid) {
 
         //formulate delete query
-        $sql = "DELETE FROM cart WHERE cart_id='$cart_id'";
+        $sql = "DELETE FROM cart WHERE p_id='$productid' AND c_id='$customerid'";
 
         //execute query
         return $this->db_query($sql);
     }
 
+
+
     //Update model
-    public function cart_update($product_id, $user_id, $quantity ,$ip) {
+    public function quant_update($customerid, $quantity, $productid) {
 
         //formulate update query
-        $sql = "UPDATE cart SET p_id = '$product_id', c_id = '$user_id', qty = '$quantity' WHERE ip_add = '$ip'";
+        $sql = "UPDATE cart SET qty = '$quantity' WHERE c_id = '$customerid' AND p_id='$productid'";
 
         //execute query
         return $this->db_query($sql);

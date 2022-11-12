@@ -31,6 +31,7 @@ $cart = select_all_cartctr($customerid);
 
 $cart_total = 0;
 $cart_total_qty = 0;
+
 foreach($cart as $cart_item){
     $productid= $cart_item['p_id']; 
     $quantity= $cart_item['qty'];
@@ -54,8 +55,8 @@ foreach($cart as $cart_item){
                <p class="">Description: '.$product['product_desc'].'</p>
               <span>Price: <span class="font-weight-bold">GHC '.$product['product_price'].'</span> <br>
               <span>Quantity: <span class="font-weight-bold">'.$cart_item['qty'].'</span> <br>
-              <a class="btn btn-primary" href="#" role="button">Edit Quantity</a>
-              <a class="btn btn-danger" href="#" role="button">Delete item</a>
+              <a class="btn btn-primary" href="edit_quantity.php?id='.$productid.'" role="button">Edit Quantity</a>
+              <a class="btn btn-danger" href="../actions/remove_from_cart.php?id='.$productid.'" role="button">Delete item</a>
     <br><br>
              
            </div>  

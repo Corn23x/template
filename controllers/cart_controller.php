@@ -27,12 +27,12 @@ function cart_select($productid,$customerid) {
     return $run_cart;
 }
 
-function delete_cart($cart_id) {
+function delete_cart($productid, $customerid) {
     //model class instance
     $cartdel = new Cart_class();
 
     //run select phone model method
-    $run_delete = $cartdel->cart_delete($cart_id);
+    $run_delete = $cartdel->cart_delete($productid, $customerid);
     if ($run_delete) {
 
         return true;
@@ -41,12 +41,12 @@ function delete_cart($cart_id) {
     }
 }
 
-function update_cart($product_id, $user_id, $quantity ,$ip) {
+function update_quant( $customerid, $quantity, $productid) {
     //model class instance 
     $cartupdate = new Cart_class();
 
     //run select phone model method
-    $run_update = $cartupdate->cart_update($product_id, $user_id, $quantity ,$ip);
+    $run_update = $cartupdate->quant_update($customerid, $quantity, $productid);
     if ($run_update) {
         return true;
     } else {
