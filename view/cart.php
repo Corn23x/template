@@ -66,6 +66,7 @@ foreach($cart as $cart_item){
 }
 
 echo '
+
 <div class="row">
     <div class="col">
     <h3 class="text-center">Cart Total: </h3>
@@ -74,11 +75,13 @@ echo '
 <h3 class="text-center">GHC '.$cart_total.'</h3>
 </div>
 
-<a class="btn btn-success form-control" href="#" role="button">Proceed to Payment</a> 
+<a class="btn btn-success form-control" href="payment.php" role="button">Proceed to Payment</a> 
 <br><br>
 <a class="btn btn-info form-control" href="all_product.php" role="button">Continue Shopping</a>
 
 ';
+
+
 
 
 ?>

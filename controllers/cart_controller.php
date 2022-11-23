@@ -66,4 +66,39 @@ function countCartCtr($id){
     return $run_cart;
 }
 
+
+
+function insert_orderctr($customerid, $invoice_no, $orderdate, $orderstatus){
+    $cart = new Cart_class();
+    $run_cart = $cart->insertorder($customerid, $invoice_no, $orderdate, $orderstatus);
+    return $run_cart;
+}
+
+function selectorderctr($customerid, $invoice_no){
+    $cart = new Cart_class();
+    $run_cart = $cart->selectorder($customerid, $invoice_no);
+    return $run_cart;
+}
+
+function makepaymentctr($amount, $customerid, $orderid, $currency, $paymentdate){
+    $cart = new Cart_class();
+    $run_cart = $cart->makepayment($amount, $customerid, $orderid, $currency, $paymentdate);
+    return $run_cart;
+}
+
+function  paymentdetailsctr($orderid, $productid, $quantity) {
+    $cart = new Cart_class();
+    $run_cart = $cart->paymentdetails($orderid, $productid, $quantity);
+    return $run_cart;
+}
+
+function  emptycartctr($customerid) {
+    $cart = new Cart_class();
+    $run_cart = $cart->emptycart($customerid);
+    return $run_cart;
+}
+
+
+
+
 ?>

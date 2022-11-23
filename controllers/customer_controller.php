@@ -40,4 +40,24 @@ include("../classes/customer_class.php");
 
     }
 
+    function selectemail_ctr($id){
+        // Create an instance
+    
+        $select_item= new customerClass();
+
+        // Execute a query
+       return $select_item->selectemail_cls($id);
+
+    }
+
+    function checkemail_ctr($email){
+        // Create an instance
+    
+        $select_item= new customerClass();
+
+        // Execute a query
+       return $select_item->checkemail_cls($email);
+
+    }
+
 ?>

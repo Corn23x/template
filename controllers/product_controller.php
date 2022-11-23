@@ -170,12 +170,12 @@
 
     }
 
-    function Oneprod($prodcutid){
+    function Oneprod($productid){
         //model class instance
         $prod = new Product_class();
 
         //run select phone model method
-        $run = $prod->selectOne($prodcutid);
+        $run = $prod->selectOne($productid);
         return $run;
       
     }

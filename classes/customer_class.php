@@ -1,5 +1,5 @@
 <?php
-require('../settings/db_class.php');
+include_once(dirname(__DIR__, 1) . '/settings/db_class.php');
 
 class customerClass extends db_connection{
 
@@ -29,25 +29,26 @@ class customerClass extends db_connection{
             return false;
         }
         // $user_role= $_POST['user_role'];
-
-
-       
-       
-
-      
-
-      
-
 }
 
 function mail_cls(){
     $email = $_POST['e_mail'];
-    $sql = "SELECT customer_email FROM `customer` WHERE customer_email = '".$email."'";
+    $sql = "SELECT customer_email FROM customer WHERE customer_email = '$email'";
 
     return $this->db_fetch_one($sql);
 }
 
+function selectemail_cls($id){
+    $sql = "SELECT customer_email FROM customer WHERE customer_id = '$id'";
 
+    return $this->db_fetch_one($sql)["customer_email"];
+}
+
+function checkemail_cls($email){
+    $sql = "SELECT customer_email FROM customer WHERE customer_email = '$email'";
+
+    return $this->db_fetch_one($sql);
+}
 
 }
 
